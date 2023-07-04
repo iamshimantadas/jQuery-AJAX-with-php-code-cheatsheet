@@ -1,1 +1,7 @@
+note: INSERT,UPDATE,DELETE => POST method and SELECT/SEARCH => GET method
+
+learn php with ajax:
 https://www.studentstutorial.com/ajax/insert-data?expand_article=1
+
+live search:php+ajax+mysql:https://www.tutorialrepublic.com/php-tutorial/php-mysql-ajax-live-search.php
+
