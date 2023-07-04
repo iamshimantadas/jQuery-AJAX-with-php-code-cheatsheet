@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SELECT Request</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+    
+    <input type="text" name="email" id="email">
+    <br>
+    <br>
+    <button id="btn1">check</button>
+
+
+</body>
+<script>
+    $(document).ready(function(){
+        $('#btn1').click(function(e){
+            e.preventDefault();
+          let em = $('#email').val(); 
+          console.log(em);
+
+          $.ajax({
+            url:"check.php",
+            method:"GET",
+            data:{email:em},
+            success:function(data){
+                console.log(data);
+            }
+          });
+        });
+    });
+</script>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert via AJAX with PHP</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    
+    <br>
+
+    <p class="text-center l1">INSERT FORM VIA AJAX WITH PHP</p>
+
+    <br>
+    <br>
+
+
+   <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+
+        <!-- form  -->
+        <form name="myform" id="myform"  method="post">
+            <div class="mb-3">
+              <label for="uname" class="form-label">Enter Name</label>
+              <input type="text" class="form-control" id="uname">
+             </div>
+             <div class="mb-3">
+                <label for="phone" class="form-label">Enter Phone</label>
+                <input type="text" class="form-control" id="phone">
+            </div>
+            <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+          </form>
+
+    </div>
+    <div class="col-2"></div>
+   </div>
+
+
+</body>
+<script>
+    $(document).ready(function(){
+        $('#submit').click(function(e){
+            e.preventDefault();
+            let nm = $('#uname').val();
+          let ph = $('#phone').val();
+         
+          console.log(nm+' '+ph);
+          
+          // initialize object's array to ajax
+            $.ajax({
+              url:"insert.php",
+              method:"POST",
+              data:{
+                name:nm,
+                phone:ph
+              },
+              success:function(data){
+                console.log(data);
+              }
+            });
+
+        });
+    });
+</script>
+
+</html>
